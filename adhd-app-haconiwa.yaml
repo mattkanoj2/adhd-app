@@ -1,0 +1,120 @@
+apiVersion: haconiwa.dev/v1
+kind: Space
+metadata:
+  name: adhd-app-development
+spec:
+  nations:
+  - id: jp
+    name: Japan
+    cities:
+    - id: tokyo
+      name: Tokyo
+      villages:
+      - id: adhd-app-village
+        name: ADHD App Development Village
+        companies:
+        - name: adhd-app-company
+          grid: 8x4
+          basePath: ./adhd-app-workspace
+          organizations:
+          - id: "01"
+            name: "ADHD App Frontend Team"
+            tasks: ["タスク管理UI", "リマインダー機能", "進捗可視化", "モバイル対応"]
+          - id: "02" 
+            name: "ADHD App Backend Team"
+            tasks: ["ユーザー認証", "データ永続化", "通知システム", "分析API"]
+          - id: "03"
+            name: "ADHD Support Features Team"  
+            tasks: ["集中力サポート機能", "習慣化支援", "レポート生成", "AIアシスタント"]
+          - id: "04"
+            name: "UX/Accessibility Team"
+            tasks: ["ADHDフレンドリーUI", "アクセシビリティ", "ユーザーテスト", "ドキュメント"]
+          gitRepo:
+            url: "https://github.com/mattkanoj2/adhd-app"
+            defaultBranch: "main"
+            auth: "https"
+          buildings:
+          - id: headquarters
+            name: ADHD App Development HQ
+            floors:
+            - level: 1
+              rooms:
+              - id: room-01
+                name: Feature Development Room
+                description: "新機能開発とプロトタイピング"
+              - id: room-02
+                name: Testing & Refinement Room
+                description: "テストとユーザビリティ改善"
+
+---
+# ADHDアプリ向けタスク定義
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: task-management-core
+spec:
+  branch: feature/task-management-core
+  worktree: true
+  assignee: org01-pm-r1
+  spaceRef: adhd-app-company
+  description: "ADHDユーザー向けタスク管理コア機能の実装"
+
+---
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: reminder-notification-system
+spec:
+  branch: feature/reminder-notifications
+  worktree: true
+  assignee: org02-pm-r1
+  spaceRef: adhd-app-company
+  description: "柔軟なリマインダーと通知システムの構築"
+
+---
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: focus-timer-pomodoro
+spec:
+  branch: feature/focus-timer
+  worktree: true
+  assignee: org03-pm-r1
+  spaceRef: adhd-app-company
+  description: "集中力維持のためのポモドーロタイマー機能"
+
+---
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: adhd-friendly-ui-design
+spec:
+  branch: feature/adhd-friendly-ui
+  worktree: true
+  assignee: org04-pm-r1
+  spaceRef: adhd-app-company
+  description: "ADHDユーザーに優しいUIデザインの実装"
+
+---
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: habit-tracking-analytics
+spec:
+  branch: feature/habit-tracking
+  worktree: true
+  assignee: org03-wk-a-r1
+  spaceRef: adhd-app-company
+  description: "習慣化支援と行動分析機能"
+
+---
+apiVersion: haconiwa.dev/v1
+kind: Task
+metadata:
+  name: data-sync-offline-support
+spec:
+  branch: feature/offline-sync
+  worktree: true
+  assignee: org02-wk-a-r2
+  spaceRef: adhd-app-company
+  description: "オフライン対応とデータ同期機能"

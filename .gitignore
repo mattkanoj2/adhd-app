@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+*.lock
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+.pytest_cache/
+coverage/
+
+# Environment
+.env
+.env.local
+
+# Haconiwa workspace
+adhd-app-workspace/
+*-desks/
